@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚨 Vi Esse Link Aqui! | Confere</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ==================================== */
+        /* 1. VARIÁVEIS CSS (Ultra-Dark e Alto Contraste) */
+        /* ==================================== */
+        :root {
+            /* Cores */
+            --cor-fundo-principal: #000000; /* Preto absoluto */
+            --cor-fundo-secundario: #0A0A0A; /* Card em preto muito escuro */
+            --cor-texto-principal: #FFFFFF; /* Branco puro */
+            --cor-texto-secundario: #B0B0B0;
+            --cor-destaque-primaria: #FFD700; /* Dourado/Ouro */
+            --cor-destaque-secundaria: #FF416C; /* Rosa/Ação */
+            --cor-borda: #1F1F1F; /* Borda mais discreta */
+            --sombra-card: 0 15px 40px rgba(0, 0, 0, 1); /* Sombra mais intensa */
+
+            /* Tipografia */
+            --fonte-principal: 'Montserrat', sans-serif;
+            --tamanho-titulo: 2.2rem;
+            --tamanho-subtitulo: 1.6rem;
+            --tamanho-texto: 1rem;
+
+            /* Espaçamento e Borda */
+            --espacamento-padrao: 20px;
+            --borda-radius: 16px;
+        }
+
+        /* ==================================== */
+        /* 2. RESET E ESTILOS BASE */
+        /* ==================================== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--fonte-principal);
+            background-color: var(--cor-fundo-principal);
+            color: var(--cor-texto-principal);
+            text-align: center;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* Fundo sutil para preencher */
+            background-image: radial-gradient(circle, #080808 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--espacamento-padrao);
+            width: 100%;
+        }
+
+        /* ==================================== */
+        /* 3. CABEÇALHO (HEADER) */
+        /* ==================================== */
+        .main-header {
+            padding: 50px var(--espacamento-padrao) 30px;
+            border-bottom: 1px solid var(--cor-borda);
+        }
+
+        .logo-img {
+            width: 90px; 
+            height: 90px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 4px solid var(--cor-destaque-primaria); 
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); 
+        }
+
+        .main-header h1 {
+            font-family: var(--fonte-principal); 
+            font-size: var(--tamanho-titulo);
+            font-weight: 800; 
+            color: var(--cor-destaque-primaria);
+            margin-bottom: 8px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 3px rgba(255, 215, 0, 0.3);
+        }
+
+        .main-header p {
+            font-size: var(--tamanho-texto);
+            color: var(--cor-texto-secundario);
+            font-weight: 600;
+        }
+
+        /* ==================================== */
+        /* 4. SEÇÃO PRINCIPAL (OFFER) */
+        /* ==================================== */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px var(--espacamento-padrao);
+        }
+
+        .offer-card {
+            width: 100%;
+            max-width: 480px;
+            padding: 35px;
+            background: var(--cor-fundo-secundario);
+            border-radius: var(--borda-radius);
+            border: 1px solid var(--cor-borda);
+            box-shadow: var(--sombra-card);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .offer-card:hover {
+             transform: translateY(-8px) scale(1.02); 
+        }
+
+        .offer-card h2 {
+            color: var(--cor-destaque-secundaria);
+            font-size: var(--tamanho-subtitulo);
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+        }
+
+        .offer-card h2 i {
+            margin-right: 12px;
+            color: var(--cor-destaque-primaria);
+            animation: pulse 1.5s infinite; 
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        .offer-card p {
+            font-size: 1.05rem;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 30px;
+        }
+
+        .product-img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: var(--borda-radius);
+            margin-bottom: 35px;
+            border: 5px solid transparent; 
+            background: linear-gradient(var(--cor-fundo-secundario), var(--cor-fundo-secundario)) padding-box,
+                        linear-gradient(45deg, var(--cor-destaque-primaria), var(--cor-destaque-secundaria)) border-box;
+        }
+
+        /* BOTÃO - Ponto de Foco Máximo */
+        .offer-button {
+            display: block; 
+            padding: 18px 35px; 
+            background: linear-gradient(90deg, #FF4B2B, #FF416C); 
+            color: white;
+            border-radius: 50px; 
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.2rem;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 0 15px rgba(255, 65, 108, 0.6); 
+            animation: neon-glow 3s infinite alternate;
+        }
+        
+        @keyframes neon-glow {
+            from { box-shadow: 0 0 15px rgba(255, 65, 108, 0.6), 0 0 5px rgba(255, 65, 108, 0.4); }
+            to { box-shadow: 0 0 25px rgba(255, 65, 108, 0.8), 0 0 10px rgba(255, 65, 108, 0.6); }
+        }
+
+        .offer-button:hover {
+            transform: scale(1.05) translateY(-2px); 
+            background: linear-gradient(90deg, #e64024, #e63960);
+            box-shadow: 0 0 30px rgba(255, 65, 108, 0.9);
+            animation: none; 
+        }
+
+        .offer-button i {
+             margin-right: 10px;
+        }
+
+        /* ==================================== */
+        /* 5. RODAPÉ (FOOTER) - Discreto */
+        /* ==================================== */
+        .main-footer {
+            padding: 25px var(--espacamento-padrao);
+            text-align: center;
+            border-top: 1px solid var(--cor-borda);
+            color: #6a6a6a; 
+            font-size: 0.8rem;
+        }
+        .main-footer a {
+            color: #6a6a6a;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .main-footer a:hover {
+            color: var(--cor-texto-secundario);
+        }
+
+        /* ==================================== */
+        /* 6. RESPONSIVIDADE (MEDIA QUERIES) */
+        /* ==================================== */
+        @media (min-width: 768px) {
+            :root {
+                --tamanho-titulo: 3.5rem;
+                --tamanho-subtitulo: 2rem;
+                --tamanho-texto: 1.15rem;
+            }
+
+            .main-header { padding-top: 60px; }
+            
+            .offer-card {
+                max-width: 550px;
+                padding: 50px;
+            }
+
+            .offer-button {
+                display: inline-block;
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <img src="https://i.pinimg.com/736x/0b/aa/5a/0baa5a4ed3b5df9d67d94e369f26a713.jpg" class="logo-img" alt="Símbolo de Notificação">
+            <h1>EITA! TU VIU ISSO?</h1>
+            <p><strong>Eu ia nem mandar</strong>, mas essa oferta tá ABSURDA de boa. Confere rapidinho, tá?</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="offer-card" role="region" aria-labelledby="offer-heading">
+            <h2 id="offer-heading"><i class="fa-solid fa-fire-flame-curved"></i> CARACA, É SÉRIO ISSO?</h2> 
+            <p>Sei que cê não tá esperando isso. É a chance de ouro. <strong>O preço tá limitado</strong> e a condição é só pra quem clicar agora. Clica e confere por você mesmo:</p>
+            
+            <img src="https://i.pinimg.com/736x/59/5f/cc/595fcc6dacc9a140b468248b174f33ce.jpg" class="product-img" alt="Imagem do Conteúdo Exclusivo">
+            
+            <a href="https://otieu.com/4/9969939" class="offer-button" aria-label="Acessar e ver a oferta exclusiva">
+                <i class="fa-solid fa-arrow-right"></i> VOU DAR UMA OLHADA!
+            </a>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 | Todos os direitos reservados. | <a href="#">Termos de Uso</a></p>
+        </div>
+    </footer>
+</body>
+</html>
